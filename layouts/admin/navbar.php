@@ -16,7 +16,7 @@
                 </div>
                 <div class="navbar-nav w-100">
                     <a href="index.html" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
-                    <a href="index.html" class="nav-item nav-link"><i class="fas fa-chalkboard-teacher me-2"></i>Teachers</a>
+                    <a href="/adminTrainer" class="nav-item nav-link"><i class="fas fa-chalkboard-teacher me-2"></i>Teachers</a>
                     <a href="widget.html" class="nav-item nav-link"><i class="fa fa-user me-2"></i>Students</a>
                     <a href="form.html" class="nav-item nav-link"><i class="far fa-folder-open me-2"></i>Category</a>
                     <a href="table.html" class="nav-item nav-link"><i class="fas fa-book me-2"></i>Course</a>

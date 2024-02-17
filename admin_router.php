@@ -13,7 +13,13 @@ if (array_key_exists($uri, $routes)) {
    http_response_code(404);
    $page = 'views/errors/404.php';
 }
-require "layouts/admin/header.php";
-require "layouts/admin/navbar.php";
+
+if ($uri !== '/admin'){
+    require "layouts/admin/header.php";
+    require "layouts/admin/navbar.php";
+}else{
+    require "layouts/header.php";
+    require "layouts/navbar.acc.php";
+}
 require $page;
 require "layouts/admin/footer.php";

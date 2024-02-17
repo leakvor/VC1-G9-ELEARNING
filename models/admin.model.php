@@ -50,11 +50,3 @@ function deletePost(int $id) : bool
     $statement->execute([':id' => $id]);
     return $statement->rowCount() > 0;
 }
-
-function getTeacher() : array
-{
-    global $connection;
-    $statement = $connection->prepare("select * from users where role=2");
-    $statement->execute();
-    return $statement->fetchAll();
-}

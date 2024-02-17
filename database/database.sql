@@ -1,33 +1,11 @@
--- create database;
-CREATE DATABASE e_learning;
-
--- table roles;
-CREATE TABLE roles (id int AUTO_INCREMENT PRIMARY KEY, position VARCHAR(30));
-
--- insert position into roles tables
-INSERT INTO roles (position) VALUES('Admin'),('Teachers'),('Students');
-
--- table users;
-CREATE TABLE users(
-    id int AUTO_INCREMENT PRIMARY KEY,
-    firstName VARCHAR(30),
-    lastName VARCHAR(30),
-    email VARCHAR(50),
-    password VARCHAR(50),
-    role int(11),
-    FOREIGN KEY (role) REFERENCES roles(id)
-    );
-
 
 -- insert to user table
 INSERT INTO users(firstName, lastName, email, password, role)
-VALUES('Senrin','Sim','senrin.sim@student.passerellesnumeriques.org','%senrin',1),
-('Rady','Y','rady.Y@st.passerellesnumeriques.org','%rady',2),
-('Ng','Mam','ng.mam@student.passerellesnumeriques.org','%ngmam',3);
-
+VALUES('Senrin','Sim','senrin.sim@student.passerellesnumeriques.org','%senrin','admin'),
+('Rady','Y','rady.Y@st.passerellesnumeriques.org','%rady','teacher'),
+('Ng','Mam','ng.mam@student.passerellesnumeriques.org','%ngmam','student');
 
 -- course category
-
 CREATE TABLE categories(
     id int AUTO_INCREMENT PRIMARY KEY,
     category_name VARCHAR(30)

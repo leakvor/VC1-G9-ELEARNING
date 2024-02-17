@@ -9,10 +9,24 @@ function createAcc(string $firstName, string $lastName, string $email, string $p
         ':lastName' => $lastName,
         ':email' => $email,
         ':password' => $password,
-        ':role' => 3,
+        ':role' => 'user',
     ]);
 
     return $statement->rowCount() > 0;
+}
+
+function accountExist(string $email): array
+{
+    global $connection;
+    $statement = $connection->prepare("SELECT * FROM users WHERE email = :email");
+    $statement->execute([
+        ':email' => $email,
+    ]);
+    if ($statement->rowCount() > 0){
+        return $results = $statement->fetch(PDO::FETCH_ASSOC);
+    }else{
+        return [];
+    }
 }
 
 // function getPost(int $id) : array

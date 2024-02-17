@@ -259,20 +259,6 @@
       </div>
   
       <!-- Language -->
-      <!-- <div class="dropdown ms-1 ms-lg-0">
-        <a class="nav-link" href="#" id="profileDropdown" role="button" data-bs-auto-close="outside" data-bs-display="static" data-bs-toggle="dropdown"
-          aria-expanded="true">
-          <i class="fas fa-globe me-2"></i>
-            <span class="d-none d-lg-inline-block">Language</span>
-        </a>
-        <ul class="dropdown-menu dropdown-menu-end min-w-auto shadow pt-3" aria-labelledby="profileDropdown">
-          <li> <a class="dropdown-item" href="#"><img class="fa-fw me-2" src="assets/images/flags/uk.svg" alt="">English</a></li>
-          <li> <a class="dropdown-item" href="#"><img class="fa-fw me-2" src="assets/images/flags/gr.svg" alt="">German</a></li>
-          <li> <a class="dropdown-item" href="#"><img class="fa-fw me-2" src="assets/images/flags/sp.svg" alt="">French</a></li>
-        </ul>
-      </div> -->
-  
-      <!-- Language -->
       <ul class="navbar-nav navbar-nav-scroll me-3 d-none d-xl-block">
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="language" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -293,8 +279,6 @@
         <a href="/signins" type="button" class="btn btn-danger-soft mb-0"><i class="fas fa-sign-in-alt me-2"></i>Log in</a>
       </div>
       <!-- Right header content END -->
-    
-    </div>
   </nav>
   <!-- Logo Nav END -->
   </header>

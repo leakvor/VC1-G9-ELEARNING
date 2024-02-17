@@ -1,13 +1,11 @@
 <?php
-require('database/database.php');
+// require('database/database.php');
 require('models/trainer.model.php');
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    var_dump($_POST);
-    if (!empty($_POST['firstName']) && !empty($_POST['lastName']) && !empty($_POST['email']) && !empty($_POST['password'])) {
-        createTrainer($_POST['firstName'], $_POST['lastName'], $_POST['email'], $_POST['password']);
+    if (!empty($_POST['username']) && !empty($_POST['email']) && !empty($_POST['password'])) {
+        createTrainer($_POST['username'], $_POST['email'], $_POST['password']);
     }
 }
-
-
 $teachers = getTeacher();
 require('views/trainers/adminTrainer.view.php');
+// header('location: /adminTrainer')

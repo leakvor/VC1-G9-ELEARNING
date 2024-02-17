@@ -1,22 +1,22 @@
 <?php
+
 function getTeacher() : array
 {
     global $connection;
-    $statement = $connection->prepare("select * from users where role=2");
+    $statement = $connection->prepare("select * from users where role='teacher'");
     $statement->execute();
     return $statement->fetchAll();
 }
 
-function createTrainer(string $firstName, string $lastName, string $email, string $password) : bool
+function createTrainer(string $username, string $email, string $password) : bool
 {
     global $connection;
-    $statement = $connection->prepare("insert into users (firstName, lastName,email,password,role) values (:firstName, :lastName, :email,:password,:role)");
+    $statement = $connection->prepare("insert into users (username,email,password,role) values (:username, :email,:password,:role)");
     $statement->execute([
-        ':firstName'=>$firstName,
-        ':lastName'=>$lastName,
+        ':username'=>$username,
         ':email'=>$email,
         ':password'=>$password,
-        ':role'=>2,
+        ':role'=>"teacher",
 
     ]);
 

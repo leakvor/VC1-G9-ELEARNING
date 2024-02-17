@@ -21,10 +21,7 @@
         <div class="modal-body">
             <form action="/addTrainer" method="post">
                 <div class="form-group mt-3">
-                    <input type="text" class="form-control bg-white" name="firstName" placeholder="FirstName" id="firstName">
-                </div>
-                <div class="form-group mt-3">
-                    <input type="text" class="form-control bg-white" name="lastName" placeholder="LastName" id="lastName">
+                    <input type="text" class="form-control bg-white" name="username" placeholder="UserName" >
                 </div>
                 <div class="form-group mt-3">
                     <input type="text" class="form-control bg-white" name="email" placeholder="Email" name="email">
@@ -46,21 +43,21 @@
         <tr>
           <th scope="col">id</th>
           <th scope="col">FirstName</th>
-          <th scope="col">LastName</th>
           <th scope="col">Email</th>
           <th scope="col">Password</th>
+          <th scope="col">Img</th>
           <th scope="col">Action</th>
         </tr>
       </thead>
       <tbody>
         <?php foreach ($teachers as $teacher) : ?>
           <tr>
-            <th scope="row"><?= $teacher['id'] ?></th>
+            <th scope="row"><?= $teacher['user_id'] ?></th>
             <!-- <td><img src="" alt=""></td> -->
-            <td><?= $teacher['firstName'] ?></td>
-            <td><?= $teacher['lastName'] ?></td>
+            <td><?= $teacher['username'] ?></td>
             <td><?= $teacher['email'] ?></td>
             <td><?= $teacher['password'] ?></td>
+            <td></td>
             <td><i class="fa fa-trash" style="color:red;"><a href=""></a></i>
               <i class="fa fa-edit" style="color:blue;"><a href=""></a></i>
             </td>

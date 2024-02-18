@@ -1,6 +1,6 @@
  
 <!-- Header START -->
-<header class="navbar-light navbar-sticky navbar-transparent">
+<header class="navbar-light bg-light navbar-sticky navbar-transparent">
   <!-- Logo Nav START -->
   <nav class="navbar navbar-expand-xl">
     <div class="container">
@@ -276,9 +276,14 @@
       <!-- Signout button  -->
       <div class="navbar-nav d-none d-lg-inline-block">
         <!-- <a href="/signups" type="button" class="btn btn-danger-soft mb-0"><i class="fas fa-sign-in-alt me-2"></i>Sign Up</a> -->
-        <a href="/signins" type="button" class="btn btn-danger-soft mb-0"><i class="fas fa-sign-in-alt me-2"></i>Log in</a>
+        <a href="/signins" type="button" class="btn text-dark btn-dark-soft mb-0"><i class="fas fa-sign-in-alt me-2"></i>Log out</a>
       </div>
       <!-- Right header content END -->
+      <a href="#" class="nav-link">
+        <!-- <i class="fas fa-user"> -->
+        <img class="rounded-circle me-lg-2" src="assets/images/user.jpg" alt="" style="width: 40px; height: 40px;">
+        <!-- <span class="d-none d-lg-inline-flex">John Doe</span> -->
+      </a>
   </nav>
   <!-- Logo Nav END -->
   </header>

@@ -17,12 +17,13 @@ if (array_key_exists($uri, $routes)) {
    $page = 'views/errors/404.php';
 }
 
-
 require "layouts/header.php";
-if ($uri != '/'){
-    require "layouts/navbar.acc.php";  
-}else{
-    require "layouts/navbar.php"; 
-}
+// if ($uri != '/'){
+//     require "layouts/navbar.acc.php";  
+// }
+// else{
+//     require "layouts/navbar.php"; 
+// }
+require "layouts/navbar.php"; 
 require $page;
 require "layouts/footer.php";

@@ -59,7 +59,7 @@ if (isset($_SESSION['success'])){
         <div class="container-fluid">
             <div class="row h-100 align-items-center justify-content-center" style="min-height: 100vh;">
                 <div class="col-12 col-sm-8 col-md-6 col-lg-5 col-xl-4">
-                    <form action="controllers/signin/signin.check.controller.php" method = 'post'>
+                    <form action="controllers/admin/check_signin.controller.php" method = 'post'>
                         <div class="bg-secondary rounded p-4 p-sm-5 my-4 mx-3">
                             <div class="d-flex align-items-center justify-content-between mb-3">
                                 <a href="index.html" class="">

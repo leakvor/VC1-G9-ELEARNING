@@ -1,52 +1,81 @@
 <?php
 
-function createPost(string $title, string $description) : bool
+function createAcc(string $firstName, string $lastName, string $email, string $password) : bool
 {
     global $connection;
-    $statement = $connection->prepare("insert into posts (title, description) values (:title, :description)");
+    $statement = $connection->prepare("insert into users(firstName, lastName, email, password, role) values(:firstName, :lastName, :email, :password, :role)");
     $statement->execute([
-        ':title' => $title,
-        ':description' => $description
-
+        ':firstName' => $firstName,
+        ':lastName' => $lastName,
+        ':email' => $email,
+        ':password' => $password,
+        ':role' => 'user',
     ]);
 
     return $statement->rowCount() > 0;
 }
 
-function getPost(int $id) : array
+function accountExist(string $email): array
 {
     global $connection;
-    $statement = $connection->prepare("select * from posts where id = :id");
-    $statement->execute([':id' => $id]);
-    return $statement->fetch();
-}
-
-function getPosts() : array
-{
-    global $connection;
-    $statement = $connection->prepare("select * from posts");
-    $statement->execute();
-    return $statement->fetchAll();
-}
-
-function updatePost(string $title, string $description, int $id) : bool
-{
-    global $connection;
-    $statement = $connection->prepare("update posts set title = :title, description = :description where id = :id");
+    $statement = $connection->prepare("SELECT * FROM users WHERE email = :email");
     $statement->execute([
-        ':title' => $title,
-        ':description' => $description,
-        ':id' => $id
-
+        ':email' => $email,
     ]);
-
-    return $statement->rowCount() > 0;
+    if ($statement->rowCount() > 0){
+        return $results = $statement->fetch(PDO::FETCH_ASSOC);
+    }else{
+        return [];
+    }
 }
 
-function deletePost(int $id) : bool
-{
-    global $connection;
-    $statement = $connection->prepare("delete from posts where id = :id");
-    $statement->execute([':id' => $id]);
-    return $statement->rowCount() > 0;
-}
+// function createPost(string $title, string $description) : bool
+// {
+//     global $connection;
+//     $statement = $connection->prepare("insert into posts (title, description) values (:title, :description)");
+//     $statement->execute([
+//         ':title' => $title,
+//         ':description' => $description
+
+//     ]);
+
+//     return $statement->rowCount() > 0;
+// }
+
+// function getPost(int $id) : array
+// {
+//     global $connection;
+//     $statement = $connection->prepare("select * from posts where id = :id");
+//     $statement->execute([':id' => $id]);
+//     return $statement->fetch();
+// }
+
+// function getPosts() : array
+// {
+//     global $connection;
+//     $statement = $connection->prepare("select * from posts");
+//     $statement->execute();
+//     return $statement->fetchAll();
+// }
+
+// function updatePost(string $title, string $description, int $id) : bool
+// {
+//     global $connection;
+//     $statement = $connection->prepare("update posts set title = :title, description = :description where id = :id");
+//     $statement->execute([
+//         ':title' => $title,
+//         ':description' => $description,
+//         ':id' => $id
+
+//     ]);
+
+//     return $statement->rowCount() > 0;
+// }
+
+// function deletePost(int $id) : bool
+// {
+//     global $connection;
+//     $statement = $connection->prepare("delete from posts where id = :id");
+//     $statement->execute([':id' => $id]);
+//     return $statement->rowCount() > 0;
+// }

@@ -1,6 +1,6 @@
 
 <!-- Header START -->
-<header class="navbar-light navbar-sticky navbar-transparent">
+<header class="navbar-light bg-light navbar-sticky navbar-transparent">
   <!-- Logo Nav START -->
   <nav class="navbar navbar-expand-xl">
     <div class="container">
@@ -275,8 +275,8 @@
   
       <!-- Signout button  -->
       <div class="navbar-nav d-none d-lg-inline-block">
-        <a href="/signups" type="button" class="btn btn-danger-soft mb-0"><i class="fas fa-sign-in-alt me-2"></i>Sign Up</a>
-        <a href="/signins" type="button" class="btn btn-danger-soft mb-0"><i class="fas fa-sign-in-alt me-2"></i>Log in</a>
+        <a href="/signups" type="button" class="btn text-dark btn-dark-soft mb-0"><i class="fas fa-sign-in-alt me-2"></i>Sign Up</a>
+        <a href="/signins" type="button" class="btn text-dark btn-dark-soft mb-0"><i class="fas fa-sign-in-alt me-2"></i>Log in</a>
       </div>
       <!-- Right header content END -->
   </nav>

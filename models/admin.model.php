@@ -21,10 +21,10 @@ function getPost(int $id) : array
     return $statement->fetch();
 }
 
-function getPosts() : array
+function getCategorys() : array
 {
     global $connection;
-    $statement = $connection->prepare("select * from posts");
+    $statement = $connection->prepare("select * from category");
     $statement->execute();
     return $statement->fetchAll();
 }

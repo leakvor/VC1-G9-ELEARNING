@@ -7,6 +7,7 @@ $routes = [
     '/trainer-classroom' => 'controllers/classroom/classroom.controller.php',
     '/adminTrainer' => 'controllers/trainers/adminTrainer.controller.php',
     '/addTrainer' => 'controllers/trainers/addTrainer.controller.php',
+    '/displayCategory'=>'controllers/categories/displayCategory.controller.php',
 ];
 
 if (array_key_exists($uri, $routes)) {

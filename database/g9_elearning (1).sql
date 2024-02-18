@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 17, 2024 at 09:53 AM
+-- Generation Time: Feb 18, 2024 at 07:21 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.0.28
 
@@ -29,9 +29,16 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `category` (
   `cat_id` int(11) NOT NULL,
-  `cateName` varchar(50) NOT NULL,
-  `descriptions` int(200) NOT NULL
+  `cateName` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `category`
+--
+
+INSERT INTO `category` (`cat_id`, `cateName`) VALUES
+(1, 'Information technology'),
+(2, 'Math');
 
 -- --------------------------------------------------------
 
@@ -47,6 +54,13 @@ CREATE TABLE `course` (
   `cate_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `course`
+--
+
+INSERT INTO `course` (`course_id`, `title`, `img`, `user_id`, `cate_id`) VALUES
+(1, 'HTML', '', 2, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -55,12 +69,28 @@ CREATE TABLE `course` (
 
 CREATE TABLE `users` (
   `user_id` int(11) NOT NULL,
-  `firstName` varchar(50) NOT NULL,
-  `lastName` varchar(50) NOT NULL,
+  `username` varchar(50) NOT NULL,
   `email` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL,
-  `role` varchar(30) NOT NULL
+  `role` varchar(30) NOT NULL,
+  `img` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`user_id`, `username`, `email`, `password`, `role`, `img`) VALUES
+(1, 'admin', 'admin@gmail.com', '123', 'admin', ''),
+(2, 'leak', 'leak@gmail.com', '123leak', 'teacher', ''),
+(3, 'rodiduky', 'gavocyp@mailinator.com', 'Pa$$w0rd!', 'teacher', ''),
+(5, 'fyporotuji', 'piligys@mailinator.com', 'Pa$$w0rd!', 'teacher', ''),
+(7, 'lisuti', 'sokubovi@mailinator.com', 'Pa$$w0rd!', 'teacher', ''),
+(9, 'kivuwunary', 'buqifi@mailinator.com', 'Pa$$w0rd!', 'teacher', ''),
+(11, 'fefyf', 'a@mailinator.com', 'Pa$$w0rd!', 'teacher', ''),
+(14, 'bugyry', 'pynut@mailinator.com', 'Pa$$w0rd!', 'teacher', ''),
+(16, 'licemexynu', 'zitusejop@mailinator.com', 'Pa$$w0rd!', 'teacher', ''),
+(18, 'jikydirazu', 'koqibob@mailinator.com', 'Pa$$w0rd!', 'teacher', '');
 
 --
 -- Indexes for dumped tables
@@ -95,19 +125,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `cat_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `cat_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `course`
 --
 ALTER TABLE `course`
-  MODIFY `course_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `course_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- Constraints for dumped tables

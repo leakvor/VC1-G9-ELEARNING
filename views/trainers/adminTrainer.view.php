@@ -58,8 +58,9 @@
             <td><?= $teacher['email'] ?></td>
             <td><?= $teacher['password'] ?></td>
             <td></td>
-            <td><i class="fa fa-trash" style="color:red;"><a href=""></a></i>
-              <i class="fa fa-edit" style="color:blue;"><a href=""></a></i>
+            <td class="d-flex d-grid gap-3">
+             <a href="controllers/trainers/trainer.delete.controller.php?id=<?= $teacher['user_id'] ?>"> <i class="fa fa-trash" style="color:red;"></i> </a>
+              <a href="controllers/trainers/trainer.edit.controller.php?id=<?= $teacher['user_id'] ?>"> <i class="fa fa-edit" style="color:blue;"></i> </a>
             </td>
           </tr>
         <?php endforeach ?>

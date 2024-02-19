@@ -8,6 +8,7 @@ function getTeacher() : array
     return $statement->fetchAll();
 }
 
+
 function createTrainer(string $username, string $email, string $password) : bool
 {
     global $connection;
@@ -22,3 +23,18 @@ function createTrainer(string $username, string $email, string $password) : bool
 
     return $statement->rowCount() > 0;
 }
+
+
+function deleteTeacher(int $id): bool
+{
+    global $connection;
+    $statement = $connection->prepare("delete from users where user_id = :user_id");
+    $statement->execute([':user_id' => $id]);
+    return $statement->rowCount() > 0;
+}
+
+
+
+
+
+

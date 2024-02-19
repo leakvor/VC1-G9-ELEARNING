@@ -33,7 +33,17 @@ function deleteTeacher(int $id): bool
     return $statement->rowCount() > 0;
 }
 
-
+function editTeacher($username,$email,$password,$id){
+    global $connection;
+    $statement= $connection->prepare("update users set username=:username,email =:email,password =:password where user_id=:id");
+    $statement->execute([
+        ':id' => $id,
+        ':username'=>$username,
+        ':email' => $email,
+        ':password' => $password, 
+    ]);
+    $statement->rowCount() >0;
+}
 
 
 

@@ -7,5 +7,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     $id = $_GET['id'];
 
     $deluser = deleteTeacher($id);
-    header("Location: /adminTrainer");
+    header('Location: /adminTrainer');
 }

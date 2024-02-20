@@ -1,5 +1,5 @@
 <?php
-// session_start();
+session_start();
 require('../../database/database.php');
 require('../../models/students.model.php');
 
@@ -11,8 +11,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
     $user = accountExist($email);
     if (count($user) > 0){
         if (password_verify($password, $user['password'])){
-            header('Location: /home');
-            // $_SESSION['success'] = "Login account succesfuly";
+            header('Location: /');
+            $_SESSION['user'] = $user;
+            $_SESSION['success'] = "Login account succesfuly";
         }else{
             echo "incorrect pass!";
             header('Location: /signins');

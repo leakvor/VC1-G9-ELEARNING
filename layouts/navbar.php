@@ -272,14 +272,49 @@
           </ul>
         </li>
       </ul>
-  
+
+      <!-- get start session -->
+      <?php
+        if (!isset($_SESSION['user'])){
+      ?>
       <!-- Signout button  -->
       <div class="navbar-nav d-none d-lg-inline-block">
         <a href="/signups" type="button" class="btn text-dark btn-dark-soft mb-0"><i class="fas fa-sign-in-alt me-2"></i>Sign Up</a>
         <a href="/signins" type="button" class="btn text-dark btn-dark-soft mb-0"><i class="fas fa-sign-in-alt me-2"></i>Log in</a>
       </div>
+      <?php
+        }
+      ?>
+
+      <?php
+      if (isset($_SESSION['user'])){
+        $user = $_SESSION['user'];
+        
+      ?>
+      <!-- <div class="d-flex align-items-center">
+        <div class="navbar-nav d-none d-lg-inline-block">
+          <a href="controllers/logout.controller.php" type="button" class="btn text-dark mb-0"><i class="fas fa-sign-in-alt me-2"></i>Log out</a>
+        </div>
+        <h3 class="btn-dark-soft p-2"><?php echo $user['firstName']?></h3>
+      </div> -->
+      <div class="nav-item dropdown">
+        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+          <img class="rounded-circle me-lg-2" src="assets/images/user.jpg" alt="" style="width: 40px; height: 40px;">
+          <span class="d-none d-lg-inline-flex"><?php echo $user['firstName']?></span>
+        </a>
+        <div class="dropdown-menu dropdown-menu-end bg-dark border-0 rounded-0 rounded-bottom m-0">
+          <a href="#" class="dropdown-item">My Profile</a>
+          <a href="#" class="dropdown-item">Settings</a>
+          <a href="controllers/logout.controller.php" class="dropdown-item">Log Out</a>
+        </div>
+      </div>
+      <?php
+      }
+      ?>
       <!-- Right header content END -->
+      
   </nav>
+
   <!-- Logo Nav END -->
   </header>
 <!-- Header END -->

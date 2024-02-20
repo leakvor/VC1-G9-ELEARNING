@@ -26,6 +26,8 @@
 	<!-- Theme CSS -->
 	<link id="style-switch" rel="stylesheet" type="text/css" href="vendor/css/style.css">
 
+	<!-- <?php session_start();?> -->
+
 </head>
 
 <body>

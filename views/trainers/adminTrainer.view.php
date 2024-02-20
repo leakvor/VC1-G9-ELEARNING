@@ -3,7 +3,7 @@
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
     Add new trainer
   </button>
-
+  
   <!-- The Modal -->
   <div class="modal" id="myModal" >
     <div class="modal-dialog" >
@@ -53,7 +53,6 @@
         <?php foreach ($teachers as $teacher) : ?>
           <tr>
             <th scope="row"><?= $teacher['user_id'] ?></th>
-            <!-- <td><img src="" alt=""></td> -->
             <td><?= $teacher['username'] ?></td>
             <td><?= $teacher['email'] ?></td>
             <td><?= $teacher['password'] ?></td>

@@ -1,7 +1,7 @@
 <?php
 require 'utils/url.php';
 require 'database/database.php';
-if (urlIs("/admin")|| urlIs("/adminTrainer")|| urlIs("/addTrainer")  || urlIs("/adminCourse")) { 
+if (urlIs("/admin")|| urlIs("/adminTrainer")|| urlIs("/addTrainer")  || urlIs("/adminCourse") || urlIs("/addCourse")) { 
     require "admin_router.php";
 } else if (urlIs('/signin') || urlIs('/signup')) {
     require "authentication_router.php";

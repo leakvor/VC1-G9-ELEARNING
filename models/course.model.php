@@ -7,3 +7,19 @@ function getCourse() : array
     $statement->execute();
     return $statement->fetchAll();
 }
+
+function createCourse( string $title,string $img,int $user_id,int $cate_id)
+{
+    global $connection;
+    $statement = $connection->prepare("insert into course (title,img,user_id,cate_id) values (:title, :img,:user_id,:cate_id)");
+    $statement->execute([
+        ':title'=>$title,
+        ':img'=>$img,
+        ':user_id'=>$user_id,
+        ':cate_id'=>$cate_id,
+    ]);
+
+    return $statement->rowCount() > 0;
+}
+
+

@@ -21,13 +21,7 @@ function getPost(int $id) : array
     return $statement->fetch();
 }
 
-function getCategorys() : array
-{
-    global $connection;
-    $statement = $connection->prepare("select * from category");
-    $statement->execute();
-    return $statement->fetchAll();
-}
+
 
 function updatePost(string $title, string $description, int $id) : bool
 {
